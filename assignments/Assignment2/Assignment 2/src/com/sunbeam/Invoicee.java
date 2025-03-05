@@ -31,6 +31,10 @@ class Invoice {
     }
 
     public int getQuantity() {
+    	if(quantity <0)
+    	{
+    		this.quantity=0;
+    	}
         return quantity;
     }
 
@@ -40,6 +44,10 @@ class Invoice {
     }
 
     public double getPricePerItem() {
+    	if(pricePerItem <0)
+    	{
+    		this.pricePerItem=0;
+    	}
         return pricePerItem;
     }
 
@@ -50,8 +58,8 @@ class Invoice {
 
 public class Invoicee{
     public static void main(String[] args) {
-        Invoice invoice1 = new Invoice("1234", "pen", 5, 9.99);
-        Invoice invoice2 = new Invoice("5678", "rubber", 3, 1.0);
+        Invoice invoice1 = new Invoice("1234", "pen", -2, 9.99);
+        Invoice invoice2 = new Invoice("5678", "rubber", -23, 1.0);
         System.out.println("Invoice 1: " + invoice1.getNumber() + " - " + invoice1.getDescription() + " - " + invoice1.getQuantity()+" - Amount: " + invoice1.getInvoiceAmount());
         System.out.println("Invoice 2: " + invoice2.getNumber() + " - " + invoice2.getDescription() +" - " + invoice2.getQuantity()+ " - Amount: " + invoice2.getInvoiceAmount());
     }
